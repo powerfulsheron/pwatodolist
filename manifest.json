@@ -4,9 +4,9 @@
   "theme_color": "#1e2123",
   "background_color": "#0f7dd5",
   "display": "standalone",
-  "orientation": "landscape",
+  "orientation": "portrait",
   "Scope": "/",
-  "start_url": "/js/app.js",
+  "start_url": "/index.html",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
