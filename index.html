@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#68cfd0">
+  <meta name="Description" content="PWA Todo List made by <3">
+  <title>PWA Todo List </title>
+  <link rel="prefetch" href="./js/app.js">
+  <link rel="prefetch" href="./js/components/form/form.js">
+  <link rel="prefetch" href="./js/components/todo/todo.js">
+  <link rel="prefetch" href="./js/connection.js">
+  <link rel='preconnect;crossorigin' href='//localhost:3000/posts/'>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html, body {
+        background-color: #241f35;
+        font-family: 'Open Sans', sans-serif;
+      }
+      @media (display-mode: standalone) {
+        body {
+          background-color: yellow;
+        }
+      }
+      header { 
+        color: #ffffff;
+        font-family: "Arial Black", cursive;
+        font-size: 60px;
+        font-weight: normal;
+        margin-bottom: 0px;
+        margin-top: 40px;
+        text-align: center;
+        text-shadow: 0 1px 1px rgb(17, 0, 116); 
+      }
+  </style>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((reg) => {
+            console.log('Service worker registered.', reg);
+          });
+      });
+    }
+    else {
+      console.log('Use another cache method :(');
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <span class="title">Ma Todo List</span>
+    </nav>
+  </header>
+  <section id="app">
+    <main id="list">
+    </main>
+  </section>
+  <script type="module" src="/js/app.js" async></script>
+  <script nomodule>
+    const script = document.createElement('script');
+    script.src = "./js/components/todo/todo.js";
+    document.head.appendChild(script);
+  </script>
+</body>
+
+</html>

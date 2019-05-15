@@ -1,0 +1,15 @@
+{
+  "name": "pwatodolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "idb": "^4.0.3",
+    "lit-element": "^2.1.0"
+  }
+}
